@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.*;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Java6Assertions.assertThat;
 
 public class 프린터 {
     //우선순위 큐 안쓰고, 배열 sort해서 로직에 쓰면 더 효율적일까?
@@ -22,16 +22,16 @@ public class 프린터 {
 
         int index = 0;
 
-        while(location >= 0) {
+        while (location >= 0) {
             int head = temp.remove(0);
 
-            if(head >= desc.peek()) {
+            if (head >= desc.peek()) {
                 desc.poll();
                 index++;
             } else {
                 temp.add(head);
 
-                if(location == 0) {
+                if (location == 0) {
                     location += temp.size();
                 }
             }
@@ -44,8 +44,8 @@ public class 프린터 {
 
     @Test
     public void test() {
-        int[] prio = {1, 1, 9, 1, 1, 1};
+        int[] priorities = {1, 1, 9, 1, 1, 1};
         int location = 0;
-        assertEquals(solution(prio, location), 5);
+        assertThat(solution(priorities, location)).isEqualTo(5);
     }
 }
