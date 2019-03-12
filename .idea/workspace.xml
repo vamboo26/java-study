@@ -39,32 +39,32 @@
     <session id="330761193">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.2" value="1" />
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gradle" value="1" />
-          <entry key="java" value="2" />
+          <entry key="java" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="1" />
-          <entry key="JAVA" value="2" />
+          <entry key="JAVA" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="56" />
+          <entry key="java" value="512" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="56" />
+          <entry key="JAVA" value="512" />
         </counts>
       </usages-collector>
     </session>
@@ -72,12 +72,25 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/programmers/lv2/프린터.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/programmers/lv2/가장큰수.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+            <state relative-caret-position="295">
+              <caret line="40" column="49" lean-forward="true" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Integer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="1230" column="17" lean-forward="true" selection-start-line="1230" selection-start-column="17" selection-end-line="1230" selection-end-column="17" />
+              <folding>
+                <element signature="e#47036#47037#0" expanded="true" />
+                <element signature="e#47092#47093#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -407,6 +420,7 @@
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/main/java/programmers/프린터.java" />
         <option value="$PROJECT_DIR$/src/main/java/programmers/lv2/프린터.java" />
+        <option value="$PROJECT_DIR$/src/main/java/programmers/lv2/가장큰수.java" />
       </list>
     </option>
   </component>
@@ -419,6 +433,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -454,6 +471,15 @@
             </path>
             <path>
               <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="algorithm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="programmers" type="462c0819:PsiDirectoryNode" />
+              <item name="lv2" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="algorithm" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
@@ -461,16 +487,13 @@
         </subPane>
         <option name="show-excluded-files" value="false" />
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552325725049" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552392650334" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15581204" />
@@ -489,7 +512,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.가장큰수.test">
     <configuration name="프린터.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="algorithm_main" />
       <extension name="coverage">
@@ -506,8 +529,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="가장큰수.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="algorithm_main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="programmers.lv2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="programmers.lv2" />
+      <option name="MAIN_CLASS_NAME" value="programmers.lv2.가장큰수" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.프린터.test" />
+      <item itemvalue="JUnit.가장큰수.test" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.가장큰수.test" />
         <item itemvalue="JUnit.프린터.test" />
       </list>
     </recent_temporary>
@@ -526,24 +570,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="프린터_test - 2019.03.11 at 18h 00m 27s.xml">
-      <configuration name="프린터.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="프린터_test - 2019.03.11 at 18h 00m 48s.xml">
-      <configuration name="프린터.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="프린터_test - 2019.03.11 at 18h 01m 07s.xml">
-      <configuration name="프린터.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="프린터_test - 2019.03.11 at 18h 01m 35s.xml">
-      <configuration name="프린터.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="프린터_test - 2019.03.11 at 18h 02m 56s.xml">
-      <configuration name="프린터.test" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="프린터_test - 2019.03.11 at 18h 03m 43s.xml">
-      <configuration name="프린터.test" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="프린터_test - 2019.03.11 at 18h 06m 30s.xml">
       <configuration name="프린터.test" configurationId="JUnit" />
     </history-entry>
@@ -556,12 +582,30 @@
     <history-entry file="프린터_test - 2019.03.12 at 02h 34m 28s.xml">
       <configuration name="프린터.test" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="가장큰수_test - 2019.03.12 at 20h 40m 11s.xml">
+      <configuration name="가장큰수.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="가장큰수_test - 2019.03.12 at 20h 40m 31s.xml">
+      <configuration name="가장큰수.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="가장큰수_test - 2019.03.12 at 20h 58m 10s.xml">
+      <configuration name="가장큰수.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="가장큰수_test - 2019.03.12 at 21h 01m 31s.xml">
+      <configuration name="가장큰수.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="가장큰수_test - 2019.03.12 at 21h 02m 22s.xml">
+      <configuration name="가장큰수.test" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="가장큰수_test - 2019.03.12 at 21h 02m 38s.xml">
+      <configuration name="가장큰수.test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25479743" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25746268" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -570,13 +614,13 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.31428573" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.31344903" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.329718" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Build" order="10" weight="0.32941177" />
       <window_info anchor="bottom" id="Messages" order="11" />
@@ -615,6 +659,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="1230" column="17" lean-forward="true" selection-start-line="1230" selection-start-column="17" selection-end-line="1230" selection-end-column="17" />
+          <folding>
+            <element signature="e#47036#47037#0" expanded="true" />
+            <element signature="e#47092#47093#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/programmers/lv2/가장큰수.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="40" column="49" lean-forward="true" selection-start-line="40" selection-start-column="49" selection-end-line="40" selection-end-column="49" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
