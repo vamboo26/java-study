@@ -12,7 +12,8 @@ public class 숫자야구 {
 
         for (int i = 123; i <= 987; i++) {
             String target = String.valueOf(i);
-            outer:
+            boolean flag = true;
+
             if(!target.contains("0")
                     && target.charAt(0) != target.charAt(1)
                     && target.charAt(1) != target.charAt(2)
@@ -23,10 +24,13 @@ public class 숫자야구 {
                     int balls = countBalls(one, target, strikes);
 
                     if (strikes != ints[1] || balls != ints[2]) {
-                        break outer;
+                        flag = false;
                     }
                 }
-                count++;
+
+                if(flag) {
+                    count++;
+                }
             }
         }
 
