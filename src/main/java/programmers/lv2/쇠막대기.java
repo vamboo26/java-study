@@ -1,7 +1,5 @@
 package programmers.lv2;
 
-import java.util.Stack;
-
 public class 쇠막대기 {
     public int solution(String arrangement) {
         int answer = 0;
