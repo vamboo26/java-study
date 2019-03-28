@@ -5,8 +5,8 @@ import org.junit.Test;
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
 public class 숫자야구 {
-    //Doby 코드 보고 리팩토링만...!
 
+    //TODO : Googled solution
     public int solution(int[][] baseball) {
         int count = 0;
 

@@ -45,6 +45,7 @@ public class 쇠막대기 {
         return count + 1;
     }
 
+    //TODO : Googled solution
     public int 참고풀이(String arrangement) {
         int answer = 0;
         int sticks = 0;

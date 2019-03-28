@@ -5,8 +5,8 @@ import org.junit.Test;
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
 public class 조이스틱 {
-    //TODO : Googled solution
 
+    //TODO : Googled solution
     public int solution(String name) {
         int count = 0;
         int move = name.length() - 1;

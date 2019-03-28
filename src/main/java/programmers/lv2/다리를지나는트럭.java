@@ -8,9 +8,9 @@ import java.util.Queue;
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
 public class 다리를지나는트럭 {
-    //TODO : Googled solution
-    //구글링해서 카피 후 리팩토링했는데 더 간결하게는 못하나?
 
+    //구글링해서 카피 후 리팩토링했는데 더 간결하게는 못하나?
+    //TODO : Googled solution
     public int solution(int bridge_length, int weight, int[] truck_weights) {
         int sec = 0;
         int crossing_weight = 0;
