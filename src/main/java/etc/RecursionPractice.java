@@ -183,6 +183,13 @@ public class RecursionPractice {
         return binarySearch(items, target, middle + 1, end);
     }
 
+    private boolean findMazePath(int[][] maze, int x, int y) {
+        if( x < 0 || y < 0 || x >= maze.length || y >= maze[0].length) {
+            return false;
+        }
+
+    }
+
     @Test
     public void test() {
         System.out.println(fibonacci(14));
