@@ -205,6 +205,45 @@ public class RecursionPractice {
                 + countingCellsInBlob(grid, x - 1, y - 1);
     }
 
+//    int N = 5;
+//    int[] cols = new int[N + 1];
+//    //???
+//    private boolean nQueens(int level) {
+//        if(!isPromising(level)) {
+//            return false;
+//        }
+//
+//        if(level == N) {
+//            for (int j = 1; j <= N; j++) {
+//                System.out.println(j + ", " + cols[j]);
+//            }
+//            return true;
+//        }
+//
+//        for (int i = 1; i < N; i++) {
+//            cols[level + 1] = i;
+//            if(nQueens(level + 1)) {
+//                return true;
+//            }
+//        }
+//
+//        return false;
+//    }
+
+//    private boolean isPromising(int level) {
+//        for (int i = 1; i <= level; i++) {
+//            if(cols[i] == cols[level]) {
+//                return false;
+//            }
+//
+//            if(level - i == Math.abs(cols[level] - cols[i])) {
+//                return false;
+//            }
+//        }
+//
+//        return true;
+//    }
+
     @Test
     public void test() {
         System.out.println(fibonacci(14));
@@ -231,5 +270,18 @@ public class RecursionPractice {
                         {0,1,1,0,0,1,1,1},
                 };
         assertThat(countingCellsInBlob(grid, 3, 5)).isEqualTo(13);
+
+        int emptyGrid[][] =
+                {
+                        {0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0},
+                        {0,0,0,0,0,0,0,0}
+                };
+
     }
 }
