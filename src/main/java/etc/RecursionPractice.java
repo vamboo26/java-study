@@ -183,11 +183,26 @@ public class RecursionPractice {
         return binarySearch(items, target, middle + 1, end);
     }
 
-    private boolean findMazePath(int[][] maze, int x, int y) {
-        if( x < 0 || y < 0 || x >= maze.length || y >= maze[0].length) {
-            return false;
+    private int countingCellsInBlob(int grid[][], int x, int y) {
+        if(x < 0 || x >= grid.length || y < 0 || y >= grid[0].length) {
+            return 0;
         }
 
+        if(grid[x][y] != 1) {
+            return 0;
+        }
+
+        System.out.println(x + "+" + y);
+
+        grid[x][y] = 2;
+        return 1 + countingCellsInBlob(grid, x, y + 1)
+                + countingCellsInBlob(grid, x, y - 1)
+                + countingCellsInBlob(grid, x + 1, y)
+                + countingCellsInBlob(grid, x + 1, y + 1)
+                + countingCellsInBlob(grid, x + 1, y - 1)
+                + countingCellsInBlob(grid, x - 1, y)
+                + countingCellsInBlob(grid, x - 1, y + 1)
+                + countingCellsInBlob(grid, x - 1, y - 1);
     }
 
     @Test
@@ -203,5 +218,18 @@ public class RecursionPractice {
         printInBinary(10);
         assertThat(sum(5, new int[] {1,2,3,4,5})).isEqualTo(15);
         assertThat(binarySearch(new String[] {"a","b","c","d","e"}, "d", 0, 4 )).isEqualTo(3);
+
+        int grid[][] =
+                {
+                        {1,0,0,0,0,0,0,1},
+                        {0,1,1,0,0,1,0,0},
+                        {1,1,0,0,1,0,1,0},
+                        {0,0,0,0,0,1,0,0},
+                        {0,1,0,1,0,1,0,0},
+                        {0,1,0,1,0,1,0,0},
+                        {1,0,0,0,1,0,0,1},
+                        {0,1,1,0,0,1,1,1},
+                };
+        assertThat(countingCellsInBlob(grid, 3, 5)).isEqualTo(13);
     }
 }
