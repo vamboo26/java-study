@@ -18,7 +18,7 @@ public class Q1608 {
             intimates[i] = br.readLine();
         }
 
-
+        //TODO
     }
 
 }
