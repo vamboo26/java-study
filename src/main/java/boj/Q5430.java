@@ -2,7 +2,6 @@ package boj;
 
 import java.io.*;
 import java.util.*;
-import java.util.stream.Collectors;
 
 //AC문제
 public class Q5430 {
@@ -13,34 +12,31 @@ public class Q5430 {
         int T = Integer.parseInt(br.readLine());
 
         for (int i = 0; i < T; i++) {
-            AC ac = new AC(br.readLine(), br.readLine(), br.readLine());
-            bw.write(ac.getResult() + "\n");
+            bw.write(new AC(br.readLine(), br.readLine(), br.readLine()).getResult());
         }
 
         br.close();
         bw.close();
     }
 
-    static class AC {
+    private static class AC {
         private String command;
-        private List<Integer> arr;
+        private List<String> array;
 
-        AC(String command, String length, String arr) {
+        private AC(String command, String length, String array) {
             this.command = command;
-            this.arr = parseToArr(arr);
+            this.array = strToList(array);
         }
 
-        private LinkedList<Integer> parseToArr(String arr) {
-            arr = arr.replaceAll("\\[", "").replaceAll("]","");
+        private LinkedList<String> strToList(String array) {
+            array = array.replaceAll("[\\[\\]]", "");
+            System.out.println(array);
 
-            if(arr.equals("")) {
+            if(array.equals("")) {
                 return new LinkedList<>();
             }
 
-            return Arrays.stream(arr.split(","))
-                    .filter(i -> !i.equals(" "))
-                    .map(Integer::valueOf)
-                    .collect(Collectors.toCollection(LinkedList::new));
+            return new LinkedList<>(Arrays.asList(array.split(",")));
         }
 
         private String getResult() {
@@ -52,30 +48,24 @@ public class Q5430 {
                 }
 
                 if(letter.equals("D")) {
-                    if(arr.isEmpty()) {
-                        return "error";
+                    if(array.isEmpty()) {
+                        return "error \n";
                     }
 
                     if(reverse) {
-                        arr.remove(arr.size() - 1);
+                        array.remove(array.size() - 1);
                     } else {
-                        arr.remove(0);
+                        array.remove(0);
                     }
                 }
             }
 
             if(reverse) {
-                Collections.reverse(arr);
+                Collections.reverse(array);
             }
 
-            StringBuilder sb = new StringBuilder();
-            StringJoiner sj = new StringJoiner(",");
-
-            for (Integer integer : arr) {
-                sj.add(String.valueOf(integer));
-            }
-
-            return sb.append("[").append(sj).append("]").toString();
+            StringBuilder sb = new StringBuilder(array.toString());
+            return sb.append("\n").toString().replaceAll(" ", "");
         }
     }
 }
