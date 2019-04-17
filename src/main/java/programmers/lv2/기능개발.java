@@ -31,15 +31,15 @@ public class 기능개발 {
     }
 
     private class Feature {
-        int progress;
-        int speed;
+        private int progress;
+        private int speed;
 
-        Feature(int progress, int speed) {
+        private Feature(int progress, int speed) {
             this.progress = progress;
             this.speed = speed;
         }
 
-        boolean isDeployable(int date) {
+        private boolean isDeployable(int date) {
             return progress + date * speed >= 100;
         }
     }
@@ -54,6 +54,7 @@ public class 기능개발 {
             }
             dayOfend[day]++;
         }
+
         return Arrays.stream(dayOfend).filter(i -> i != 0).toArray();
     }
 }
