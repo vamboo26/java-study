@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
+//https://youtu.be/hDhf04AJIRs
 public class Array_Manipulation {
 
     // Complete the arrayManipulation function below.
