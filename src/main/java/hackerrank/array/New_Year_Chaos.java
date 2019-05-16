@@ -17,7 +17,13 @@ public class New_Year_Chaos {
 
             //because it's impossible for any number greater than
             // q[i] reach position q[i] - 2 as only allow two bribes.
-            //TODO j의 범위 정하는 게 이해가 안됨
+            /**
+             * Math.max(0, q[i] - 2)의 의미
+             * 현재 q[i] 앞에 나를 앞질러간(bribing)한 수를 찾아서 bribe를 increment하는 작업
+             * q[q[i] - 2] 부터 q[i - 1] 까지를 검증 범위로 두는 이유는
+             * q[i] - 2가 나보다 큰 수가 나를 앞질러 갔을 때 가장 멀리 갈 수 있는 인덱스라서!!!
+             */
+
             for (int j = Math.max(0, q[i] - 2); j < i; j++) {
                 if (q[j] > q[i]) {
                     bribe++;
