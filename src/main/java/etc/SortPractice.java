@@ -5,7 +5,7 @@ import java.util.Arrays;
 public class SortPractice {
 
     public static void main(String[] args) {
-        int[] arr = {1,3,2,5,13,23,22,12,17,16,14,15,8,4,9,6,11};
+        int[] arr = {1,3,2,5,13,23};
         System.out.println(Arrays.toString(arr));
 
         quickSort(arr);
@@ -27,6 +27,7 @@ public class SortPractice {
             quickSort(arr, partition, end);
         }
     }
+
 
     private static int partiton(int[] arr, int start, int end) {
         int pivot = arr[(start + end) / 2];  //임의의 pivot, 보통 중위값(정렬되지 않았기에 어디든 상관없음)
