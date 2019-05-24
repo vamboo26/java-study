@@ -21,10 +21,11 @@ public class Q2667 {
             }
         }
 
+        int count;
+
         for (int i = 0; i < numberOfComplexes; i++) {
             for (int j = 0; j < numberOfComplexes; j++) {
-
-                int count = 0;
+                count = 0;
                 count += dfs(building, i, j);
 
                 if(count > 0) {
