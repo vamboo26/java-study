@@ -20,12 +20,14 @@ public class 베스트앨범 {
         Collections.sort(albums);
 
         List<Map.Entry<String, Integer>> sortedGenres = new ArrayList<>(playtimeOfGenres.entrySet());
-        sortedGenres.sort(new Comparator<Map.Entry<String, Integer>>() {
-            @Override
-            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
-                return -o1.getValue().compareTo(o2.getValue());
-            }
-        });
+        sortedGenres.sort((o1, o2) -> -o1.getValue().compareTo(o2.getValue()));
+
+//        sortedGenres.sort(new Comparator<Map.Entry<String, Integer>>() {
+//            @Override
+//            public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+//                return -o1.getValue().compareTo(o2.getValue());
+//            }
+//        });
 
         List<Integer> bestAlbums = new ArrayList<>();
         for (Map.Entry<String, Integer> sortedGenre : sortedGenres) {

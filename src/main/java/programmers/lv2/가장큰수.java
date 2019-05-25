@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
@@ -42,17 +41,13 @@ public class 가장큰수 {
             s[i] = String.valueOf(numbers[i]);
         }
 
-        Arrays.sort(s, new Comparator<String>() {
-            @Override
-            public int compare(String a, String b) {
-                if (a.charAt(0) == b.charAt(0)) {
-                    int aa = Integer.parseInt(a + b);
-                    int bb = Integer.parseInt(b + a);
-                    return bb - aa;
-                }
-
-                return b.charAt(0) - a.charAt(0);
+        Arrays.sort(s, (a,b) -> {
+            if (a.charAt(0) == b.charAt(0)) {
+                int aa = Integer.parseInt(a + b);
+                int bb = Integer.parseInt(b + a);
+                return bb - aa;
             }
+            return b.charAt(0) - a.charAt(0);
         });
 
         StringBuilder sb = new StringBuilder();
