@@ -58,8 +58,7 @@ public class NumberOfDiscIntersections {
 
             // for the curent "j" (lower point)
             while( j < A.length && upper[i] >= lower[j]){
-                intersection = intersection + j; // add j intersections
-                intersection = intersection - i; // minus "i" (avoid double count)
+                intersection += (j - i); // add j intersections, minus "i" (avoid double count)
                 j++;
             }
         }
@@ -71,7 +70,7 @@ public class NumberOfDiscIntersections {
         return intersection; // number of intersections
     }
 
-    //정확도100, 퍼포먼스25 -> 62점
+    //TODO 정확도100, 퍼포먼스25 -> 62점 O(N**2)
     public int solution3(int[] A) {
         int N = A.length;
         long[] beginPoints = new long[N];
@@ -97,10 +96,44 @@ public class NumberOfDiscIntersections {
         return (intersection > 10_000_000) ? -1 : intersection;
     }
 
+    //TODO O(N*log(N)) or O(N)
+    // 최종이해풀이... 유튜브참고!
+    // beginpoint부터 서클을 열고, 열려진서클만큼은 겹쳐지는 원의 수이다, endpoint를 지나면 서클을 닫아주고 더한다!
+    public int solution4(int[] A) {
+        int N = A.length;
+        long[] beginPoints = new long[N];
+        long[] endPoints = new long[N];
+
+        for (int i = 0; i < N; i++) {
+            beginPoints[i] = (long) i - A[i];
+            endPoints[i] = (long) i + A[i];
+        }
+
+        Arrays.sort(beginPoints);
+        Arrays.sort(endPoints);
+
+        int intersection = 0;
+        int activeCircles = 0;
+        int j = 0;
+        for (int i = 0; i < N; i++) {
+            // beginPoints[i] > endPoints[j], >로 두는 게 맞나? 반례는 없나? -> >로 두는 게 맞다, 만약 closepoint랑 겹친다고 하더라도
+            // 교차로 인정하기 때문에(border도 인정) 인터섹션을 우선적으로 더해주고 클로즈는 아예 차이가 발생하는 경우에만!
+            while(j < N && beginPoints[i] > endPoints[j]) {
+                activeCircles--;
+                j++;
+            }
+
+            intersection += activeCircles;
+            activeCircles++;
+        }
+
+        return (intersection > 10_000_000) ? -1 : intersection;
+    }
+
     @Test
     public void test() {
-        int[] A = new int[]{1, 5, 2, 1, 4, 0};
-        System.out.println(solution3(A));
+        int[] A = new int[]{1, 5, 2, 1, 4, 3};
+        System.out.println(solution4(A));
     }
 
 }
