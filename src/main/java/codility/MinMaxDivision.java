@@ -59,6 +59,7 @@ public class MinMaxDivision {
     }
 
     //TODO Googled! O(N*log(N+M))
+    // https://github.com/charles-wangkai/codility/blob/master/MinMaxDivision.java
     public int solution2(int K, int M, int[] A) {
         int result = -1;
         int upper = sum(A);
