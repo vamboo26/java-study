@@ -3,6 +3,8 @@ package codility;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static org.assertj.core.api.Java6Assertions.assertThat;
 
@@ -29,6 +31,22 @@ public class CyclicRotation {
         }
 
         return arr;
+    }
+
+    //googled
+    //그냥 리스트쓰면 이렇게? https://github.com/prostars/codility/blob/master/src/Lesson_2/CyclicRotation.java
+    public static int[] solution2(int[] A, int K) {
+        if (A == null || A.length == 0 || K == 0)
+            return A;
+
+        List<Integer> list = Arrays.stream(A).boxed().collect(Collectors.toList());
+
+        for (int i = 0; i < K; i++) {
+            list.add(0, list.get(list.size() - 1));
+            list.remove(list.size() - 1);
+        }
+
+        return list.stream().mapToInt(i->i).toArray();
     }
 
     @Test
