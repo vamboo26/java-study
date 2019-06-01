@@ -54,6 +54,65 @@ public class 단어변환 {
         return count == length - 1;
     }
 
+
+    public int solution2(String begin, String target, String[] words) {
+        int answer = 0;
+        // 워드스랑 비교
+
+        boolean[] isVisited = new boolean[words.length];
+        answer = dfs(begin, target, words, 0, isVisited, " ");
+        System.out.println(answer);
+
+
+        if (answer == 99) {
+            return 0;
+        }
+
+        return answer;
+    }
+
+    // length 값까지 근대 넘으면 99;
+    private int dfs(String begin, String target, String[] words, int count, boolean[] isVisited, String history) {
+        if (begin.equals(target)) {
+            System.out.println("결론 히스토리: " + history);
+            System.out.println("결론이 났따. " + count + begin);
+            return count;
+        }
+
+        if (count > words.length) {
+            return 99;
+        }
+
+        int answer = 99;
+
+        for (int i = 0; i < words.length; i++) {
+            if (!begin.equals(words[i])) {
+                if (onlyOneThingIsWrong(begin, words[i])) {
+                    int newAnswer = dfs(words[i], target, words, count + 1, isVisited, history + words[i]);
+                    answer = newAnswer < answer ? newAnswer : answer;
+                }
+            }
+
+        }
+
+        System.out.println("히스토리 : " + history);
+        return answer;
+    }
+
+    private boolean onlyOneThingIsWrong(String begin, String word) {
+        int count = 0;
+        for (int i = 0; i < begin.length(); i++) {
+            if (begin.charAt(i) != word.charAt(i)) {
+                count++;
+            }
+
+            if (count > 1) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     @Test
     public void test() {
         String begin = "hit";
