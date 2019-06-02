@@ -51,6 +51,7 @@ public class MissingInteger {
     }
 
     //TODO 해쉬에서 search가 최악에 O(N)인데 Array에서도 O(N)이면 굳이 해쉬에 안넣어도되지 않을까?
+    // 해쉬최악이 O(N)? <- 확인필요
     // O(N) or O(N * log(N)) 처음에 정렬해줘야하는데 이건...? 흠 일단 테스트케이스에서 성능은 나옴
     public int solution3(int[] A) {
         Arrays.sort(A);
