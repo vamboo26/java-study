@@ -1,6 +1,8 @@
-package yanolja;
+package yaja;
 
 import org.junit.Test;
+
+import static yaja.Q1.TimeStringConverter.*;
 
 public class Q1 {
 
@@ -21,39 +23,43 @@ public class Q1 {
             result.append(unit.convert(sec));
         }
 
+        System.out.println(String.format("%d%s%d%s%d%s",HOUR.convert(sec),HOUR_FORMAT,MIN.convert(sec),MIN_FORMAT, SEC.convert(sec),SEC_FORMAT));
+
+
         return result.toString();
     }
 
     public enum TimeStringConverter {
         HOUR {
             @Override
-            public String convert(int sec) {
-                return sec / SEC_OF_HOUR + HOUR_FORMAT;
+            public int convert(int sec) {
+                return sec / SEC_OF_HOUR;
             }
         },
         MIN {
             @Override
-            public String convert(int sec) {
-                return sec % SEC_OF_HOUR / SEC_OF_MIN + MIN_FORMAT;
+            public int convert(int sec) {
+                return sec % SEC_OF_HOUR / SEC_OF_MIN;
             }
         },
         SEC {
             @Override
-            public String convert(int sec) {
-                return sec % SEC_OF_HOUR % SEC_OF_MIN + SEC_FORMAT;
+            public int convert(int sec) {
+                return sec % SEC_OF_HOUR % SEC_OF_MIN;
             }
         };
 
-        public abstract String convert(int sec);
+        public abstract int convert(int sec);
     }
 
     @Test
     public void test() {
+
         System.out.println(solution(86400));
-        System.out.println(solution(7500));
-        System.out.println(solution(0));
-        System.out.println(solution(11111));
-        System.out.println(solution(83643));
+//        System.out.println(solution(7500));
+//        System.out.println(solution(0));
+//        System.out.println(solution(11111));
+//        System.out.println(solution(83643));
     }
 
 }

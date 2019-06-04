@@ -1,4 +1,4 @@
-package yanolja;
+package yaja;
 
 import org.junit.Test;
 

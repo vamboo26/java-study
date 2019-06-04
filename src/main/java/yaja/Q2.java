@@ -1,4 +1,4 @@
-package yanolja;
+package yaja;
 
 import org.junit.Test;
 
@@ -29,6 +29,12 @@ public class Q2 {
             if(amplitude > maxAmplitude) {
                 maxAmplitude = amplitude;
                 sequenceOfMostDistinguishingSeason = i;
+            }
+        }
+
+        for (Season value : Season.values()) {
+            if(sequenceOfMostDistinguishingSeason == value.sequence) {
+                return value. toString();
             }
         }
 
