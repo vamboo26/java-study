@@ -1,8 +1,8 @@
-package yaja;
+package etc.test.yaja;
 
 import org.junit.Test;
 
-import static yaja.Q1.TimeStringConverter.*;
+import static etc.test.yaja.Q1.TimeStringConverter.*;
 
 public class Q1 {
 

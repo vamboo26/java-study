@@ -1,4 +1,4 @@
-package yaja;
+package etc.test.yaja;
 
 import org.junit.Test;
 
