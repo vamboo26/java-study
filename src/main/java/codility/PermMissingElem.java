@@ -5,6 +5,7 @@ import java.util.Set;
 
 public class PermMissingElem {
 
+    //O(N) or O(N * log(N))
     public int solution(int[] A) {
         Set<Integer> elements = new HashSet<>();
         for (int each : A) {
