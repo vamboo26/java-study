@@ -9,7 +9,6 @@ public class Elvis {
     public static final Elvis INSTANCE = new Elvis();
 
     private Elvis() {
-
         if(INSTANCE != null) {
             try {
                 throw new Exception();
@@ -17,7 +16,6 @@ public class Elvis {
                 e.printStackTrace();
             }
         }
-
     }
 
     public void leaveTheBuilding() {

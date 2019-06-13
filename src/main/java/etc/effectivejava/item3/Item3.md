@@ -90,13 +90,14 @@ public class Elvis {
 가령 Elvis::getInstance를 Supplier<Elvis>로 사용하는 식(Item 43, 44)
 * 위와 같은 장점들이 굳이 필요하지 않다면 필드 방식이 좋다
 
----
 
 위의 두 방식으로 만든 싱글턴 클래스는 직렬화할 때 단순히 Serializable을 구현한다고 선언하는 것만으로는 부족하다
 
 모든 인스턴스 필드를 일시적(transient) 선언하고, readResolve 메서드를 제공해야한다(Item 89)
 
 이렇게 하지 않으면 직렬화된 인스턴스를 역직렬화할 때 새로운 인스턴스가 만들어진다
+
+---
 
 ```java
 //싱글턴임을 보장해주는 메서드
