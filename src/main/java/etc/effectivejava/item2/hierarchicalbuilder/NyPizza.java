@@ -16,8 +16,9 @@ public class NyPizza extends Pizza {
         }
 
         //반환타입은 하위타입인 NyPizza
-        //TODO
-        // Pizza가 디폴드 제어자인데 public으로 변경해주는 이유는 뭘까?
+        //        abstract Pizza build();
+        // 를 오버라이딩 했지만 Pizza가 아닌 NyPizza를 반환한다.
+        // -> 공변 반환 타입 covariant return typing
         @Override
         NyPizza build() {
             return new NyPizza(this);
