@@ -1,18 +1,20 @@
 package etc.effectivejava.item2.hierarchicalbuilder;
 
-
-import static etc.effectivejava.item2.hierarchicalbuilder.NyPizza.Size.SMALL;
-import static etc.effectivejava.item2.hierarchicalbuilder.Pizza.Topping.*;
-
-// 계층적 빌더 사용 (21쪽)
 public class PizzaTest {
-    public static void main(String[] args) {
-        NyPizza pizza = new NyPizza.Builder(SMALL)
-                .addTopping(SAUSAGE).addTopping(ONION).build();
-        Calzone calzone = new Calzone.Builder()
-                .addTopping(HAM).sauceInside().build();
 
-        System.out.println(pizza);
+    public static void main(String[] args) {
+        NyPizza nyPizza = new NyPizza.Builder(NyPizza.Size.MEDIUM)
+                .addTopping(Pizza.Topping.HAM)
+                .addTopping(Pizza.Topping.ONION)
+                .build();
+
+        Calzone calzone = new Calzone.Builder()
+                .addTopping(Pizza.Topping.ONION)
+                .sauceInside()
+                .build();
+
+        System.out.println(nyPizza);
         System.out.println(calzone);
     }
+
 }

@@ -2,9 +2,9 @@ package etc.effectivejava.item2.hierarchicalbuilder;
 
 import java.util.Objects;
 
-// 코드 2-5 뉴욕 피자 - 계층적 빌더를 활용한 하위 클래스 (20쪽)
 public class NyPizza extends Pizza {
-    public enum Size {SMALL, MEDIUM, LARGE}
+
+    public enum Size { SMALL, MEDIUM, LARGE }
 
     private final Size size;
 
@@ -15,8 +15,11 @@ public class NyPizza extends Pizza {
             this.size = Objects.requireNonNull(size);
         }
 
+        //반환타입은 하위타입인 NyPizza
+        //TODO
+        // Pizza가 디폴드 제어자인데 public으로 변경해주는 이유는 뭘까?
         @Override
-        public NyPizza build() {
+        NyPizza build() {
             return new NyPizza(this);
         }
 
@@ -26,6 +29,7 @@ public class NyPizza extends Pizza {
         }
     }
 
+    //Builder의 제네릭 <?> 사라짐
     private NyPizza(Builder builder) {
         super(builder);
         size = builder.size;
@@ -33,6 +37,11 @@ public class NyPizza extends Pizza {
 
     @Override
     public String toString() {
-        return toppings + "로 토핑한 뉴욕 피자";
+        final StringBuilder sb = new StringBuilder("NyPizza{");
+        sb.append("size=").append(size);
+        sb.append(", toppings=").append(toppings);
+        sb.append('}');
+        return sb.toString();
     }
+
 }
