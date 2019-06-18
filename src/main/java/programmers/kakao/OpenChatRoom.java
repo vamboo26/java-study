@@ -6,7 +6,7 @@ import java.util.*;
 //TODO
 // Queue, List<String[]> 어떤 선택이 옳을까? 아니면 다른?
 // Log객체는 분리하는 게 좋을까? 배열을 그냥쓰는 건 읽기에 나쁘지 않을까?
-// StringBuilder, String concat, String formate performance 차이 존재? -> StringBuilder 짱짱
+// StringBuilder, String concat, String format performance 차이 존재? -> StringBuilder 짱짱
 public class OpenChatRoom {
 
     public String[] solution(String[] record) {
