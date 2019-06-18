@@ -1,41 +1,58 @@
 package codility;
 
+import org.junit.Test;
+
 import java.util.Stack;
 
 public class Fish {
 
+    //TODO
+    // googled https://stroot.tistory.com/105
     public int solution(int[] A, int[] B) {
-        int count = 0;
-        Stack<Integer> downForwardFishes = new Stack<>();
+        int aliveCount = 0;
+        Stack<Integer> downFishes = new Stack<>();
 
-        for (int i = 0; i < B.length; i++) {
-            count++;
-            int direction = B[i];
+        for (int i = 0; i < A.length; i++) {
+            if (B[i] == 0) {    // up fish
+                aliveCount++;
 
-            if(direction == 1) {
-                downForwardFishes.add(A[i]);
-            }
+                if (downFishes.isEmpty()) {
+                    continue;
+                }
 
-            if(direction == 0) {
-                int P = downForwardFishes.pop();
+                int downFish = downFishes.peek();
 
-                while(!downForwardFishes.isEmpty() && i < B.length - 1) {
-                    int Q = A[i + 1];
+                while (true) {
+                    aliveCount--;
 
-                    if(P > Q) {
-                        downForwardFishes.add(P);
+                    if (A[downFish] < A[i]) {
+                        downFishes.pop();
+
+                        if (downFishes.isEmpty()) {
+                            break;
+                        }
+
+                        downFish = downFishes.peek();
                     }
-
-                    if(Q > P) {
+                    else {
                         break;
                     }
-
-                    i++;
                 }
+            }
+            else {    // down fish
+                downFishes.add(i);
+                aliveCount++;
             }
         }
 
-        return count;
+        return aliveCount;
+    }
+
+    @Test
+    public void test() {
+        int[] A = {4,3,2,1,5};
+        int[] B = {0,1,0,0,0};
+        System.out.println(solution(A,B));
     }
 
 }
