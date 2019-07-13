@@ -36,6 +36,8 @@ public class MujisMukBang {
             }
         }
 
+        //TODO
+        // 이 로직을 개선하려면 Food객체로 분리하는수밖에...?
         for (int i = 0; i < food_times.length; i++) {
             if(food_times[i] - cycle > 0) {
                 k--;
@@ -62,6 +64,8 @@ public class MujisMukBang {
         int[] foodTimes = {3,1,2};
         System.out.println(solution(foodTimes, 5));
     }
+
+
 
 }
 

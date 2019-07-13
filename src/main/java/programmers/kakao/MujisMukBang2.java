@@ -17,6 +17,7 @@ public class MujisMukBang2 {
     private class Food {
         int id;
         int time;
+        Object
 
         private Food(int id, int time) {
             this.id = id;
@@ -57,6 +58,7 @@ public class MujisMukBang2 {
                 answer = subList.get((int) (afterStopSec % curLength)).id;
                 break;
             }
+
 
             curLength--;
             curId++;
