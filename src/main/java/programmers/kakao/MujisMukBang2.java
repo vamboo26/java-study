@@ -17,7 +17,6 @@ public class MujisMukBang2 {
     private class Food {
         int id;
         int time;
-        Object
 
         private Food(int id, int time) {
             this.id = id;
